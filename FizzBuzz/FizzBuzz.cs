@@ -8,15 +8,24 @@ namespace FizzBuzz
     {
         public string Get(int num)
         {
+            string fizzBuzzResult = "";
+
             if (IsMultipleOf3(num))
             {
-                return "Fizz";
+                fizzBuzzResult = "Fizz";
             }
+
             if (IsMultipleOf5(num))
             {
-                return "Buzz";
+                fizzBuzzResult = fizzBuzzResult + "Buzz";
             }
-            return num.ToString();
+
+            if (fizzBuzzResult.Equals(""))
+            {
+                fizzBuzzResult = num.ToString();
+            }
+
+            return fizzBuzzResult;
         }
 
         private bool IsMultipleOf3(int numberToCheck)
